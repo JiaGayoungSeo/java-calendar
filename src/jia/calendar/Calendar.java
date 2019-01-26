@@ -70,12 +70,20 @@ public class Calendar {
         else return "not found";
     }
 
-    public void printCalendar(int year, int month){
+    public void printCalendar(int year, int month, int weekday){
         System.out.printf("           %4d     \n",year);
         System.out.println("<< "+printMonth(month-1)+"      "+printMonth(month)+"      "+printMonth(month+1)+" >>");
-        System.out.println("Sun Mon Tue Wed Thu Fri Sat");
+        System.out.println("  Sun Mon Tue Wed Thu Fri Sat");
 
+        for(int i =0; i<weekday; i++){
+            System.out.print("    ");
+        }
         int maxDay = getMaxDaysOfMonths(year,month);
+        int count = 7 - weekday;
+        for(int i = 1; i<= count;i++){
+            System.out.printf("%4d", i);
+        }
+        System.out.println();
 
         for(int i= 1; i<=maxDay;i++){
             System.out.printf("%4d", i);
