@@ -70,6 +70,18 @@ public class Calendar {
         else return "not found";
     }
 
+    public int parseDay(String week){
+        if(week.equals("sun")) return 0;
+        if(week.equals("mon")) return 1;
+        if(week.equals("tue")) return 2;
+        if(week.equals("wed")) return 3;
+        if(week.equals("thu")) return 4;
+        if(week.equals("fri")) return 5;
+        if(week.equals("sat")) return 6;
+        else return 0;
+
+    }
+
     public void printCalendar(int year, int month, int weekday){
         System.out.printf("           %4d     \n",year);
         System.out.println("<< "+printMonth(month-1)+"      "+printMonth(month)+"      "+printMonth(month+1)+" >>");
