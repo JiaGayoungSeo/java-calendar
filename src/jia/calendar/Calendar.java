@@ -92,17 +92,21 @@ public class Calendar {
         }
         int maxDay = getMaxDaysOfMonths(year,month);
         int count = 7 - weekday;
+        int delim = (count < 7) ? count : 0;
+
         for(int i = 1; i<= count;i++){
             System.out.printf("%4d", i);
         }
         System.out.println();
 
-        for(int i= 1; i<=maxDay;i++){
+        count++;
+        for(int i= count; i<=maxDay;i++){
             System.out.printf("%4d", i);
-            if(i % 7 == 0){
+            if(i % 7 == delim){
                 System.out.println();
             }
         }
+        System.out.println();
         System.out.println();
 //        System.out.println("  1   2   3   4   5   6   7");
 //        System.out.println("  8   9  10  11  12  13  14");
